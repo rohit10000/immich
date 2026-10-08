@@ -2275,6 +2275,7 @@
   "update_location_action_prompt": "Update the location of {count} selected assets with:",
   "updated_at": "Updated",
   "updated_password": "Updated password",
+  "google_takeout_upload": "Google Takeout",
   "upload": "Upload",
   "upload_concurrency": "Upload concurrency",
   "upload_day_count": "{date}: {count, plural, one {# upload} other {# uploads}}",

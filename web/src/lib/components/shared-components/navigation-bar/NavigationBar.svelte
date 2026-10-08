@@ -15,8 +15,10 @@
   import { mediaQueryManager } from '$lib/stores/media-query-manager.svelte';
   import { notificationManager } from '$lib/stores/notification-manager.svelte';
   import { sidebarStore } from '$lib/stores/sidebar.svelte';
+  import { takeoutImportManager } from '$lib/managers/takeout-import-manager.svelte';
   import { ActionButton, Button, IconButton, Logo } from '@immich/ui';
   import { mdiBellBadge, mdiBellOutline, mdiMagnify, mdiMenu, mdiTrayArrowUp } from '@mdi/js';
+  import { siGooglephotos } from 'simple-icons';
   import { onMount } from 'svelte';
   import { t } from 'svelte-i18n';
   import ThemeButton from '../ThemeButton.svelte';
@@ -99,6 +101,30 @@
             id="search-button"
             class="sm:hidden"
             aria-label={$t('go_to_search')}
+          />
+        {/if}
+
+        {#if !page.url.pathname.includes('/admin')}
+          <Button
+            leadingIcon={siGooglephotos.path}
+            onclick={() => takeoutImportManager.open()}
+            class="hidden lg:flex"
+            variant="ghost"
+            size="medium"
+            color="secondary"
+            title="Upload ZIP from takeout.google.com"
+            >{$t('google_takeout_upload') || 'Google Takeout'}
+          </Button>
+          <IconButton
+            color="secondary"
+            shape="round"
+            variant="ghost"
+            size="medium"
+            onclick={() => takeoutImportManager.open()}
+            title="Upload ZIP from takeout.google.com"
+            aria-label="Upload ZIP from takeout.google.com"
+            icon={siGooglephotos.path}
+            class="lg:hidden"
           />
         {/if}
 

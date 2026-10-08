@@ -7,6 +7,7 @@
   import OnEvents from '$lib/components/OnEvents.svelte';
   import NavigationLoadingBar from './NavigationLoadingBar.svelte';
   import UploadPanel from './UploadPanel.svelte';
+  import TakeoutImportModal from '$lib/modals/TakeoutImportModal.svelte';
   import VersionAnnouncement from './VersionAnnouncement.svelte';
   import { authManager } from '$lib/managers/auth-manager.svelte';
   import { eventManager } from '$lib/managers/event-manager.svelte';
@@ -269,6 +270,7 @@
 
   <DownloadPanel />
   <UploadPanel />
+  <TakeoutImportModal />
   <ScreencastOverlay />
 
   <CommandPaletteProvider
